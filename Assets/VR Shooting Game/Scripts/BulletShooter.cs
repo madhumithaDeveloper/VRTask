@@ -9,7 +9,6 @@ public class BulletShooter : MonoBehaviour
 
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.A))
         if(isGunPickedUp)
             if (OVRInput.GetDown(OVRInput.RawButton.RHandTrigger) || (OVRInput.GetDown(OVRInput.RawButton.LHandTrigger)))
             {
