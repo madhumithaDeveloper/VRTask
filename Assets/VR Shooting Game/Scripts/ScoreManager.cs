@@ -3,6 +3,7 @@ using UnityEngine;
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
+    public UIManager uIManager;
     public int baseScore = 100;
     public int bulletsCount = 10;
     public int currentScore = 0;
@@ -24,20 +25,9 @@ public class ScoreManager : MonoBehaviour
 
         if(currentScore >= baseScore)
         {
-            WonGame();
+            uIManager.WonGame();
             if(bulletsCount<= 0)
-                LoseGame();
+                uIManager.LoseGame();
         }
-    }
-
-
-    public void WonGame()
-    {
-        Debug.Log("won");
-    }
-
-    public void LoseGame()
-    {
-        Debug.Log("lose");
     }
 }

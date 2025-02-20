@@ -31,6 +31,7 @@ public class UpdateTargetScore : MonoBehaviour
             TargetHitFeedback.instance.targetHitParticle.position = other.transform.position;
             TargetHitFeedback.instance.decalEffect.Play();
             distanceFromCenter = Vector3.Distance(other.transform.position, shootingTarget.transform.position);
+            other.gameObject.SetActive(false);
             CheckHitTargetScore();
         }
     }
