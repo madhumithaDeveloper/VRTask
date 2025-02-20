@@ -1,4 +1,3 @@
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class BulletShooter : MonoBehaviour
@@ -20,9 +19,9 @@ public class BulletShooter : MonoBehaviour
 
     public void Shoot()
     {
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Rigidbody rb = bullet.GetComponent<Rigidbody>();
-        rb.AddForce(firePoint.forward * bulletForce, ForceMode.Impulse);
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+        //Rigidbody rb = bullet.GetComponent<Rigidbody>();
+        //rb.AddForce(firePoint.forward * bulletForce, ForceMode.Impulse);
         TargetHitFeedback.instance.muzzleFlashEffect.Play();
         TargetHitFeedback.instance.bulletAudioEffect.PlayOneShot(TargetHitFeedback.instance.bulletAudioClip);
     }
